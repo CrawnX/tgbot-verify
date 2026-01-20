@@ -10,7 +10,7 @@ def get_welcome_message(full_name: str, invited_by: bool = False) -> str:
     )
     if invited_by:
         msg += "Terima kasih telah bergabung melalui link undangan, pengundang Anda telah mendapatkan 2 poin.\n"
-
+    )
     msg += (
         "\nBot ini dapat membantu Anda menyelesaikan verifikasi SheerID secara otomatis.\n"
         "Mulai cepat:\n"
