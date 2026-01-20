@@ -1,23 +1,23 @@
-"""全局配置文件"""
+"""Konfigurasi Global"""
 import os
 from dotenv import load_dotenv
 
-# 加载 .env 文件
+# Memuat berkas .env
 load_dotenv()
 
-# Telegram Bot 配置
-BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "pk_oa")
-CHANNEL_URL = os.getenv("CHANNEL_URL", "https://t.me/pk_oa")
+# Konfigurasi Telegram Bot
+BOT_TOKEN = os.getenv(“BOT_TOKEN”, “YOUR_BOT_TOKEN_HERE”)
+CHANNEL_USERNAME = os.getenv(“CHANNEL_USERNAME”, “pk_oa”)
+CHANNEL_URL = os.getenv(“CHANNEL_URL”, “https://t.me/pk_oa”)
 
-# 管理员配置
-ADMIN_USER_ID = int(os.getenv("ADMIN_USER_ID", "123456789"))
+# Konfigurasi Administrator
+ADMIN_USER_ID = int(os.getenv(“ADMIN_USER_ID”, “123456789”))
 
-# 积分配置
-VERIFY_COST = 1  # 验证消耗的积分
-CHECKIN_REWARD = 1  # 签到奖励积分
-INVITE_REWARD = 2  # 邀请奖励积分
-REGISTER_REWARD = 1  # 注册奖励积分
+# Konfigurasi Poin
+VERIFY_COST = 5  # Poin yang dikonsumsi untuk verifikasi
+CHECKIN_REWARD = 1  # Poin hadiah untuk check-in
+INVITE_REWARD = 2  # Poin hadiah undangan
+REGISTER_REWARD = 1  # Poin hadiah pendaftaran
 
-# 帮助链接
-HELP_NOTION_URL = "https://rhetorical-era-3f3.notion.site/dd78531dbac745af9bbac156b51da9cc"
+# Tautan bantuan
+HELP_NOTION_URL = “https://rhetorical-era-3f3.notion.site/dd78531dbac745af9bbac156b51da9cc”
