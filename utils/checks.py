@@ -1,4 +1,4 @@
-"""权限检查和验证工具"""
+"""Alat pemeriksaan izin dan verifikasi"""
 import logging
 from telegram import Update
 from telegram.error import TelegramError
@@ -10,24 +10,24 @@ logger = logging.getLogger(__name__)
 
 
 def is_group_chat(update: Update) -> bool:
-    """判断是否为群聊"""
+    """Menentukan apakah ini adalah obrolan grup"""
     chat = update.effective_chat
     return chat and chat.type in ("group", "supergroup")
 
 
 async def reject_group_command(update: Update) -> bool:
-    """群聊限制：仅允许 /verify /verify2 /verify3 /verify4 /verify5 /qd"""
+    """Batasan obrolan grup: Hanya mengizinkan /verify /verify2 /verify3 /verify4 /verify5 /qd"""
     if is_group_chat(update):
-        await update.message.reply_text("群聊仅支持 /verify /verify2 /verify3 /verify4 /verify5 /qd，请私聊使用其他命令。")
+        await update.message.reply_text("Obrolan grup hanya mendukung /verify /verify2 /verify3 /verify4 /verify5 /qd, silakan gunakan pesan pribadi (PM) untuk perintah lainnya.")
         return True
     return False
 
 
 async def check_channel_membership(user_id: int, context: ContextTypes.DEFAULT_TYPE) -> bool:
-    """检查用户是否加入了频道"""
+    """Memeriksa apakah pengguna telah bergabung dengan channel"""
     try:
         member = await context.bot.get_chat_member(f"@{CHANNEL_USERNAME}", user_id)
         return member.status in ["member", "administrator", "creator"]
     except TelegramError as e:
-        logger.error("检查频道成员失败: %s", e)
+        logger.error("Gagal memeriksa keanggotaan channel: %s", e)
         return False
