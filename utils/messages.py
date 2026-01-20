@@ -22,7 +22,6 @@ def get_welcome_message(full_name: str, invited_by: bool = False) -> str:
         "/invite - Undang teman\n"
         f"Gabung ke Channel: {CHANNEL_URL}"
     )
-    [cite_start]return msg [cite: 12]
 
 
 def get_about_message() -> str:
@@ -39,7 +38,6 @@ def get_about_message() -> str:
         "1. Dapatkan link verifikasi SheerID dari situs resmi\n"
         "2. Gunakan perintah verifikasi yang sesuai di bot ini\n"
         "3. Tunggu sistem memproses dan mengunggah dokumen otomatis\n"
-    [cite_start]) [cite: 12]
 
 
 def get_help_message(is_admin: bool = False) -> str:
@@ -60,7 +58,6 @@ def get_help_message(is_admin: bool = False) -> str:
         "/getV4Code <id_verifikasi> - Ambil kode verifikasi Bolt.new\n"
         "/help - Lihat pesan bantuan ini\n"
         f"Panduan jika gagal: {HELP_NOTION_URL}\n"
-    [cite_start]) [cite: 12]
 
     if is_admin:
         msg += (
@@ -72,7 +69,6 @@ def get_help_message(is_admin: bool = False) -> str:
             "/genkey <kode> <poin> [kali] [hari] - Buat kode voucher\n"
             "/listkeys - Lihat daftar voucher\n"
             "/broadcast <teks> - Kirim pesan massal ke semua user\n"
-        [cite_start]) [cite: 12]
 
     return msg
 
@@ -86,7 +82,6 @@ def get_insufficient_balance_message(current_balance: int) -> str:
         "1. Absen harian /qd\n"
         "2. Undang teman /invite\n"
         "3. Gunakan kode voucher /use"
-    [cite_start]) [cite: 12]
 
 
 def get_verify_usage_message(command: str, service_name: str) -> str:
@@ -96,4 +91,3 @@ def get_verify_usage_message(command: str, service_name: str) -> str:
         f"Contoh: {command} https://offers.sheerid.com/p/verified/xxxx/\n\n"
         f"Layanan: {service_name}\n"
         f"Biaya: {VERIFY_COST} poin"
-    [cite_start]) [cite: 12]
