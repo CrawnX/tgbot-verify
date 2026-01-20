@@ -38,6 +38,7 @@ def get_about_message() -> str:
         "1. Dapatkan link verifikasi SheerID dari situs resmi\n"
         "2. Gunakan perintah verifikasi yang sesuai di bot ini\n"
         "3. Tunggu sistem memproses dan mengunggah dokumen otomatis\n"
+        )
 
 
 def get_help_message(is_admin: bool = False) -> str:
@@ -58,7 +59,7 @@ def get_help_message(is_admin: bool = False) -> str:
         "/getV4Code <id_verifikasi> - Ambil kode verifikasi Bolt.new\n"
         "/help - Lihat pesan bantuan ini\n"
         f"Panduan jika gagal: {HELP_NOTION_URL}\n"
-
+    )
     if is_admin:
         msg += (
             "\n👑 Perintah Admin:\n"
@@ -69,7 +70,7 @@ def get_help_message(is_admin: bool = False) -> str:
             "/genkey <kode> <poin> [kali] [hari] - Buat kode voucher\n"
             "/listkeys - Lihat daftar voucher\n"
             "/broadcast <teks> - Kirim pesan massal ke semua user\n"
-
+    )
     return msg
 
 
@@ -82,6 +83,7 @@ def get_insufficient_balance_message(current_balance: int) -> str:
         "1. Absen harian /qd\n"
         "2. Undang teman /invite\n"
         "3. Gunakan kode voucher /use"
+        )
 
 
 def get_verify_usage_message(command: str, service_name: str) -> str:
@@ -91,3 +93,4 @@ def get_verify_usage_message(command: str, service_name: str) -> str:
         f"Contoh: {command} https://offers.sheerid.com/p/verified/xxxx/\n\n"
         f"Layanan: {service_name}\n"
         f"Biaya: {VERIFY_COST} poin"
+        )
